@@ -1,0 +1,157 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+
+.container {
+  width: 400px;
+  height: 100vh;
+  margin: 0 auto;
+  background-color: #adfea3;
+  position: relative;
+}
+
+header {
+  text-align: center;
+}
+
+.inputToDo {
+  width: 300px;
+  height: 50px;
+  padding: 10px 60px 10px 20px;
+  margin: 20px 0 0 0;
+  background-color: rgba(255, 255, 255, 0.6);
+  border: 0;
+  outline: none;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12),
+    0 3px 1px -2px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+}
+
+#addToDo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 0;
+  outline: none;
+  position: absolute;
+  top: 20px;
+  right: 50px;
+  cursor: pointer;
+  background: linear-gradient(to right, #11998e, #05947c);
+  z-index: 3;
+}
+
+#addToDo i {
+  font-size: 20px;
+  color: #fff;
+}
+
+.todos {
+  margin: 30px 0 0 0;
+  position: relative;
+}
+
+.todos ul {
+  list-style: none;
+}
+
+.todos ul li {
+  background-color: #fafafa;
+  height: auto;
+  margin: 0 10px 15px 10px;
+  padding: 14px 100px 14px 14px;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+  position: relative;
+  border-radius: 5px;
+  overflow-wrap: break-word;
+}
+
+.todos ul li:last-of-type {
+  margin: 0 10px 0 10px;
+}
+
+.todos ul li .buttons {
+  width: 100px;
+  height: 50px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: grid;
+  grid-template-columns: 50px 50px;
+}
+
+.todos ul li .buttons button {
+  width: 50px;
+  height: 50px;
+  border: 0;
+  outline: none;
+  background: transparent;
+  -webkit-appearance: none;
+  cursor: pointer;
+}
+
+.todos ul li .buttons button:last-of-type::before {
+  content: "";
+  width: 1px;
+  height: 30px;
+  position: absolute;
+  top: 10px;
+  left: 50px;
+  background: slategrey;
+}
+
+.todos ul li .buttons .completeToDo:hover i {
+  color: #035003;
+}
+
+.todos ul li .buttons .deleteToDo:hover i {
+  color: red;
+}
+
+.todos ul li .buttons i {
+  font-size: 20px;
+  transition: 0.3s all ease;
+}
+
+.todos .complete {
+  padding: 60px 0 0 0;
+  position: relative;
+}
+
+.todos .complete li {
+  text-decoration: line-through;
+}
+
+ul.complete:not(:empty)::before {
+  content: "";
+  width: 150px;
+  height: 1px;
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  margin: 0 0 0 -75px;
+  background: slategrey;
+}
+
+.incomplete:empty::after {
+  content: "You have no todos";
+}
+
+.todos ul.complete:empty::after {
+  content: "You have nothing completed";
+}
+
+.incomplete::after,
+.complete::after {
+  width: 100%;
+  display: block;
+  text-align: center;
+  font-size: 12px;
+  color: #262626;
+  opacity: 0.7;
+}
